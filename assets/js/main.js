@@ -65,12 +65,17 @@ myArray.forEach((element,index) => {
 }
 
 })
- console.log(newArray); 
+ //console.log(newArray); 
 
 
  //metodo filter
-
-
+let secondArray = myArray.filter((element,index) =>{
+  if ((index < min) && (index < max)){
+  return true
+  }
+    
+});
+console.log(secondArray);
 
 // Snack 2
 
@@ -105,6 +110,41 @@ let students = [
      { name: 'Piero', id: 102, grades: 50 },
      { name: 'Francesca', id: 120, grades: 84 },
    ];
+
+
+//METODO MAP  
+
+//element,seleziona gli elementi oggetto dell'array
+//element.name va a prendere il valore della chiave name
+
+const nameUppercase = students.map((element) => {
+  //con slice selezioniamo la stringa che è il valore di name e ne estraiamo i "valori"
+  //slice lavora sulle stringhe
+  //con uppercase prendiamo il valore stringa usato e lo trasformiamo in MAIUSCOLO
+  return element.name.slice(0).toUpperCase();
+} )
+console.log(nameUppercase);
+
+
+//METODO FILTER (voto superiore a 70)
+
+const smartStudent = students.filter((element) => {
+  if (element.grades > 70 ){
+    return true
+  }
+} )
+console.log(smartStudent);
+
+
+//METODO FILTER (superiore a 70 e id superiore a 120)
+
+const smartestStudent = students.filter((element) => {
+  if ((element.grades > 70) && (element.id > 120) ){
+    return true
+  }
+} )
+console.log(smartestStudent);
+
 
 
 
