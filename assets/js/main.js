@@ -14,49 +14,77 @@
 
 
 // //bottone
-// const htmlButton = document.getElementById('invia-btn');
+const htmlButton = document.getElementById('invia-btn');
 
+let minValue = 0;
+let maxValue = 0;
 
-// //al click del bottone parte la funzione userNumber(min,max)
-// htmlButton.addEventListener("click", function userNumber(min,max) {
-//   //minimo
-// const minHtml = document.getElementById('min').value;
-// //trasformola stringa inserita in un numero
-// const minInteger = parseInt(minHtml);
-// //console.log(minInteger);
-
-// min = minInteger;
-// console.log(min);
-
-// //massimo 
-// const maxHtml = document.getElementById('max').value;
-// //trasformola stringa inserita in un numero
-// const maxInteger = parseInt(maxHtml);
-// //console.log(maxInteger);
-
-
-// max = maxInteger;
-// console.log(max);
-
-// if ((min > max) || (max > 5)) {
-//   alert('i numeri inseriti non sono corretti');
-//   location.reload()
-// }
+//al click del bottone parte la funzione userNumber(min,max)
+htmlButton.addEventListener("click", function userNumber(min,max) {
  
-// return min,max
+
+    //minimo
+const minHtml = document.getElementById('min').value;
+//trasformola stringa inserita in un numero
+const minInteger = parseInt(minHtml);
+//console.log(minInteger);
+
+min = minInteger;
+minValue = minInteger;
 
 
+//massimo 
+const maxHtml = document.getElementById('max').value;
+//trasformola stringa inserita in un numero
+const maxInteger = parseInt(maxHtml);
+//console.log(maxInteger);
+
+max = maxInteger;
+maxValue = maxInteger;
+
+
+if ((min > max) || (max > 5)) {
+  alert('i numeri inseriti non sono corretti');
+  location.reload()
+}
+
+console.log(minValue);
+console.log(maxValue);
+
+
+return min,max
+
+
+
+
+});
+
+
+
+
+ 
+
+
+
+
+
+// 
 
 // });
 
-// // //array di nomi 
+
+
+
+ //array di nomi 
   const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
+  //array vuoto
   const newArray = [];
+  
   const min = 3;
   const max = 6;
 
 
- //ciclo foreach
+ // METODO FOR EACH()
 //con il ciclo mi vado a recuperare il valore dei vari index stampando solo l'index dei due parametri
 myArray.forEach((element,index) => {
   if ((index < min) && (index < max)) {
@@ -65,19 +93,21 @@ myArray.forEach((element,index) => {
 }
 
 })
- //console.log(newArray); 
+ console.log(newArray); 
 
 
- //metodo filter
+ //METODO FILTER
 let secondArray = myArray.filter((element,index) =>{
   if ((index < min) && (index < max)){
   return true
   }
-    
-});
-console.log(secondArray);
 
-// Snack 2
+});
+
+   console.log(secondArray); 
+
+
+   // SNACK 2 
 
 
 
@@ -144,6 +174,14 @@ const smartestStudent = students.filter((element) => {
   }
 } )
 console.log(smartestStudent);
+
+
+
+
+
+
+
+
 
 
 
