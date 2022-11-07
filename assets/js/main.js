@@ -18,31 +18,38 @@ const htmlButton = document.getElementById('invia-btn');
 
 
 
-htmlButton.addEventListener("click", function() {
+htmlButton.addEventListener("click", function(min,max) {
   //minimo
 const minHtml = document.getElementById('min').value;
-parseInt(minHtml);
-console.log(minHtml);
+//trasformola stringa inserita in un numero
+const minInteger = parseInt(minHtml);
+//console.log(minInteger);
+
+min = minInteger;
+console.log(min);
+
 //massimo 
 const maxHtml = document.getElementById('max').value;
-console.log(maxHtml);
+//trasformola stringa inserita in un numero
+const maxInteger = parseInt(maxHtml);
+//console.log(maxInteger);
+
+
+max = maxInteger;
+console.log(max);
  
+return min,max
+
 });
 
 
-// const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
 
-// //for each
 
-// myArray.forEach((element) => {
-//     console.log(myArray);
-    
-//     const newArray = myArray.filter(() => {
-//       if ((myArray(element) > 2) && (myArray(element) < 4) )
-//       return true
-//     })
 
-// }) 
+
+
+ const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
+
 
 
 
@@ -74,6 +81,9 @@ console.log(maxHtml);
 // 1- Dobbiamo creare delle targhe con il loro nome in maiuscolo. Ci serve quindi un nuovo array di stringhe. Ogni elemento del nuovo array sarà il nome dello studente ma con tutte le lettere maiuscole.
 // 2-  Dobbiamo creare un nuovo array con gli studenti che hanno un totale di voti superiore a 70
 // 3-  Dobbiamo creare un nuovo array di tutti gli studenti che hanno un totale di voti superiore a 70 e id superiore a 120
+
+
+
 
 let students = [
       { name: 'Marco', id: 213, grades: 78 },
