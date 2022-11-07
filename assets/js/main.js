@@ -10,11 +10,24 @@
 
 // esempio: dati i valori min: 2 e come max: 4 i nomi nell'array nuovo saranno i nomi compresi tra queste posizioni 2 e 4
 
+//selezioni gli input da html e gli attribuisco un value
+
+
+//bottone
+const htmlButton = document.getElementById('invia-btn');
 
 
 
-
-
+htmlButton.addEventListener("click", function() {
+  //minimo
+const minHtml = document.getElementById('min').value;
+parseInt(minHtml);
+console.log(minHtml);
+//massimo 
+const maxHtml = document.getElementById('max').value;
+console.log(maxHtml);
+ 
+});
 
 
 // const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
@@ -72,7 +85,7 @@ let students = [
      { name: 'Francesca', id: 120, grades: 84 },
    ];
 
-   
+
 
 
 
