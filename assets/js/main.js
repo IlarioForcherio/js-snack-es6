@@ -17,8 +17,8 @@
 const htmlButton = document.getElementById('invia-btn');
 
 
-
-htmlButton.addEventListener("click", function(min,max) {
+//al click del bottone parte la funzione userNumber(min,max)
+htmlButton.addEventListener("click", function userNumber(min,max) {
   //minimo
 const minHtml = document.getElementById('min').value;
 //trasformola stringa inserita in un numero
@@ -37,18 +37,37 @@ const maxInteger = parseInt(maxHtml);
 
 max = maxInteger;
 console.log(max);
+
+if (min > max){
+  alert('i numeri inseriti non sono corretti');
+  location.reload()
+}
  
 return min,max
 
+
+
 });
 
+// //array di nomi 
+  const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
+
+ //ciclo foreach
+//con il ciclo mi vado a recuperare il valore dei vari index stampando solo l'index dei due parametri
+myArray.forEach(( element, index) => {
+  console.log(index);
+  const newArray = myArray.filter((index) =>{
+return index < 4;
+  } )
+  
+})
 
 
 
 
 
 
- const myArray = ['Michele', 'Fabio', 'Roberto', 'Giovanni', 'Simone', 'Chiara'];
+
 
 
 
