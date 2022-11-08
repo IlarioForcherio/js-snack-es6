@@ -122,49 +122,49 @@
 
 
 
-// let students = [
-//       { name: 'Marco', id: 213, grades: 78 },
-//       { name: 'Paola', id: 110, grades: 96 },
-//       { name: 'Andrea', id: 250, grades: 48 },
-//       { name: 'Gaia', id: 145, grades: 74 },
-//       { name: 'Luigi', id: 196, grades: 68 },
-//      { name: 'Piero', id: 102, grades: 50 },
-//      { name: 'Francesca', id: 120, grades: 84 },
-//    ];
+let students = [
+      { name: 'Marco', id: 213, grades: 78 },
+      { name: 'Paola', id: 110, grades: 96 },
+      { name: 'Andrea', id: 250, grades: 48 },
+      { name: 'Gaia', id: 145, grades: 74 },
+      { name: 'Luigi', id: 196, grades: 68 },
+     { name: 'Piero', id: 102, grades: 50 },
+     { name: 'Francesca', id: 120, grades: 84 },
+   ];
 
 
-// //METODO MAP  
+//METODO MAP  
 
-// //element,seleziona gli elementi oggetto dell'array
-// //element.name va a prendere il valore della chiave name
+//element,seleziona gli elementi oggetto dell'array
+//element.name va a prendere il valore della chiave name
 
-// const nameUppercase = students.map((element) => {
-//   //con slice selezioniamo la stringa che è il valore di name e ne estraiamo i "valori"
-//   //slice lavora sulle stringhe
-//   //con uppercase prendiamo il valore stringa usato e lo trasformiamo in MAIUSCOLO
-//   return element.name.slice(0).toUpperCase();
-// } )
-// //console.log(nameUppercase);
-
-
-// //METODO FILTER (voto superiore a 70)
-
-// const smartStudent = students.filter((element) => {
-//   if (element.grades > 70 ){
-//     return true
-//   }
-// } )
-// //console.log(smartStudent);
+const nameUppercase = students.map((element) => {
+  //con slice selezioniamo la stringa che è il valore di name e ne estraiamo i "valori"
+  //slice lavora sulle stringhe
+  //con uppercase prendiamo il valore stringa usato e lo trasformiamo in MAIUSCOLO
+  return element.name.slice(0).toUpperCase();
+} )
+//console.log(nameUppercase);
 
 
-// //METODO FILTER (superiore a 70 e id superiore a 120)
+//METODO FILTER (voto superiore a 70)
 
-// const smartestStudent = students.filter((element) => {
-//   if ((element.grades > 70) && (element.id > 120) ){
-//     return true
-//   }
-// } )
-// //console.log(smartestStudent);
+const smartStudent = students.filter((element) => {
+  if (element.grades > 70 ){
+    return true
+  }
+} )
+//console.log(smartStudent);
+
+
+//METODO FILTER (superiore a 70 e id superiore a 120)
+
+const smartestStudent = students.filter((element) => {
+  if ((element.grades > 70) && (element.id > 120) ){
+    return true
+  }
+} )
+//console.log(smartestStudent);
 
 
 
@@ -192,24 +192,54 @@ let racingBike = [
   },
 ];
 
-let pesoMinore = 0;
+// let pesoMinore = 0;
 
 
+// //FOR
   
-for (let i=0; i <racingBike.length; i++ ){
-let pesiBike = racingBike[i].peso;
-pesoMinore = Math.min(racingBike[i].peso);
-
-//console.log(pesiBike);
-};
+// for (let i=0; i <racingBike.length; i++ ){
+// let pesiBike = racingBike[i].peso;
 
 
+// if(pesiBike < controllo ){
+//  pesoMinore = pesiBike
+// }
 
-//si può fare con un oggetto singolo 
-const { nome,peso } = racingBike[0];
-//console.log(peso);
+// console.log(pesiBike)
+// };
+
+// //FOR EACH
+
+// racingBike.forEach((element,index) => {
+//   //console.log(element.peso)
+//   let pesiBike = element.peso;
+//   console.log(pesiBike);
+  
+//   //const min = Math.min.apply(null, pesiBike);
+// });
 
 
+
+// //si può fare con un oggetto singolo 
+// const { nome,peso } = racingBike[0];
+// //console.log(peso);
+
+
+//MAP
+
+// const pesiBici = racingBike.map((element,index) => {
+ 
+//  console.log(element.peso);
+
+// } );
+// console.log(pesiBici);
+
+
+
+// //versione con math.min
+
+// var min = Math.min(...racingBike.map(element => element.peso));
+// console.log(min);
 
 
 
@@ -257,6 +287,40 @@ let soccerTeams = [
     fricevuti: 0,
   }
 ];
+
+//funzione nunero random
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+//console.log(randomNumber(1,100));
+
+let numeroRandom = randomNumber(0, 100);
+//console.log(numeroRandom);
+
+
+
+//forEach per raggiungere gli elementi
+soccerTeams.forEach((element) => {
+  
+  console.log(element.score);
+  console.log(element.fricevuti);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
