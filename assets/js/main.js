@@ -192,21 +192,23 @@ let racingBike = [
   },
 ];
 
-// let pesoMinore = 0;
+let pesoMinore = racingBike [0];//questo è il primo oggetto e sarà il riferimento per il confronto
+
+//let {name,peso} = pesoMinore; destructuring dell'oggetto in questione
 
 
 // //FOR
   
-// for (let i=0; i <racingBike.length; i++ ){
-// let pesiBike = racingBike[i].peso;
-
-
-// if(pesiBike < controllo ){
-//  pesoMinore = pesiBike
-// }
-
-// console.log(pesiBike)
-// };
+for (let i=0; i <racingBike.length; i++ ){
+  // elemento corrente è un oggetto a ogni ciclo 
+  let elementoCorrente = racingBike[i];
+  // con destrutturizzazione prendo il peso di ogni oggetto a ogni giro di ciclo 
+  let { peso } = elementoCorrente;
+if( peso < pesoMinore.peso){
+  pesoMinore = pesoMinore;
+}
+};
+console.log(pesoMinore);
 
 // //FOR EACH
 
@@ -293,19 +295,37 @@ let soccerTeams = [
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
-//console.log(randomNumber(1,100));
-
-let numeroRandom = randomNumber(0, 100);
-//console.log(numeroRandom);
 
 
 
-//forEach per raggiungere gli elementi
-soccerTeams.forEach((element) => {
-  
-  console.log(element.score);
-  console.log(element.fricevuti);
+// // //forEach per raggiungere gli elementi
+soccerTeams.forEach( ( { score,fricevuti} ,index) => {
+
+
+
+
 });
+
+
+
+//soluzione
+
+//map 
+
+
+
+
+let arrayScore = soccerTeams.map(({ nome ,fricevuti})=> {
+  //per gli elementi destrutturizzati gli passo la funzione numero random
+  nome = randomNumber(0, 100);
+  fricevuti = randomNumber(0, 100)
+  
+  
+ return { nome ,fricevuti};
+
+
+});
+console.log(arrayScore);
 
 
 
